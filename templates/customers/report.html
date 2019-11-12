@@ -1,0 +1,29 @@
+{% extends "layout.html" %} {% block content %}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1>Customer Report</h1>
+    </div>
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Order</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for each in customer.orders %}
+                <tr>
+                    <td>{{each.id}}</td>
+                    <td>{{each.product.name}}</td>
+                    <td>{{each.product.price}}</td>
+                    <td>{{each.date}}</td>
+                </tr>
+                {%endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
